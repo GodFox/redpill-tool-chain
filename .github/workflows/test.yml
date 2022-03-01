@@ -46,9 +46,9 @@ jobs:
           ./redpill_tool_chain.sh add https://github.com/jumkey/redpill-load/raw/develop/redpill-acpid/rpext-index.json
           ./redpill_tool_chain.sh add https://github.com/pocopico/rp-ext/raw/main/e1000e/rpext-index.json
           ./redpill_tool_chain.sh add https://github.com/pocopico/rp-ext/raw/main/vmxnet3/rpext-index.json
-          ./redpill_tool_chain.sh add add https://github.com/pocopico/rp-ext/raw/main/mpt3sas/rpext-index.json
-          ./redpill_tool_chain.sh add add https://github.com/pocopico/rp-ext/raw/main/ixgbe/rpext-index.json
-          ./redpill_tool_chain.sh add add https://github.com/pocopico/rp-ext/raw/main/r8125/rpext-index.json
+          ./redpill_tool_chain.sh add https://github.com/pocopico/rp-ext/raw/main/mpt3sas/rpext-index.json
+          ./redpill_tool_chain.sh add https://github.com/pocopico/rp-ext/raw/main/ixgbe/rpext-index.json
+          ./redpill_tool_chain.sh add https://github.com/pocopico/rp-ext/raw/main/r8125/rpext-index.json
           
 
       - name: 编译引导镜像
