@@ -35,6 +35,11 @@ jobs:
           ./redpill_tool_chain.sh build ${{matrix.platform}}-${{matrix.version}}
 
       - name: 配置引导镜像
+        env:
+          DS918P_PID: ${{ secrets.DS918P_PID }}
+          DS918P_VID: ${{ secrets.DS918P_VID }}
+          DS918P_SN: ${{ secrets.DS918P_SN }}
+          DS918P_MAC: ${{ secrets.DS918P_MAC }}
         run: |
           cp sample_user_config.json ${{matrix.platform}}_user_config.json
           # 调整VID和PID
