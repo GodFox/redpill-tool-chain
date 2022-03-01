@@ -42,9 +42,13 @@ jobs:
           # 调整SN和MAC 最好使用 actions secrets 引入
           sed -i -e 's\1234XXX123\${DS918P_SN}\g' -e 's\XXYYXXYYXXYY\${DS918P_MAC}\g' ${{matrix.platform}}_user_config.json
           # 添加扩展驱动
-          ./redpill_tool_chain.sh add https://github.com/jumkey/redpill-load/raw/develop/redpill-acpid/rpext-index.json
           ./redpill_tool_chain.sh add https://github.com/jumkey/redpill-load/raw/develop/redpill-virtio/rpext-index.json
-          ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/main/vmxnet3/rpext-index.json
+          ./redpill_tool_chain.sh add https://github.com/jumkey/redpill-load/raw/develop/redpill-acpid/rpext-index.json
+          ./redpill_tool_chain.sh add https://github.com/pocopico/rp-ext/raw/main/e1000e/rpext-index.json
+          ./redpill_tool_chain.sh add https://github.com/pocopico/rp-ext/raw/main/vmxnet3/rpext-index.json
+          ./redpill_tool_chain.sh add add https://github.com/pocopico/rp-ext/raw/main/mpt3sas/rpext-index.json
+          ./redpill_tool_chain.sh add add https://github.com/pocopico/rp-ext/raw/main/ixgbe/rpext-index.json
+          ./redpill_tool_chain.sh add add https://github.com/pocopico/rp-ext/raw/main/r8125/rpext-index.json
           
 
       - name: 编译引导镜像
