@@ -43,9 +43,11 @@ jobs:
         run: |
           cp sample_user_config.json ${{matrix.platform}}_user_config.json
           # 调整VID和PID
-          sed -i -e "s\0x0001\${DS918P_PID}\g" -e "s\0x46f4\${DS918P_VID}\g" ${{matrix.platform}}_user_config.json
+          sed -i "s/0x46f4/${DS918P_VID}/g" ${{matrix.platform}}_user_config.json
+          sed -i "s/0x0001/${DS918P_PID}/g" ${{matrix.platform}}_user_config.json
           # 调整SN和MAC 最好使用 actions secrets 引入
-          sed -i -e "s\1234XXX123\${DS918P_SN}\g" -e "s\XXYYXXYYXXYY\${DS918P_MAC}\g" ${{matrix.platform}}_user_config.json
+          sed -i "s/1234XXX123/${DS918P_SN}/g" ${{matrix.platform}}_user_config.json
+          sed -i "s/XXYYXXYYXXYY/${DS918P_MAC}/g" ${{matrix.platform}}_user_config.json
           # 添加扩展驱动
           ./redpill_tool_chain.sh add https://github.com/jumkey/redpill-load/raw/develop/redpill-virtio/rpext-index.json
           ./redpill_tool_chain.sh add https://github.com/jumkey/redpill-load/raw/develop/redpill-acpid/rpext-index.json
